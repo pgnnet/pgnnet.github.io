@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PGNNET</title>
+	<style type="text/css">
+		* {
+			padding: 0; margin: 0;
+		}		
+		.container {
+			margin: 0 auto;
+			width: 1100px;
+		}
+		#header {
+			height: 70px;
+			background: linear-gradient(90deg, #0087A8, #188A7F);
+		}
+		#content {
+			min-height: 300px;
+		}
+		#footer {
+			min-height: 200px;
+			background: linear-gradient(to bottom, #031a1f, #000);
+		}
+		#logo {
+			background-image: url(white_all.png);
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center;
+			width: 70px;
+			height: 70px;
+			float: left;
+		}
+		#logotext {
+			font-family: Arial;
+			font-size: 23px;
+			font-weight: 900;
+			color: #fff;
+			height: 70px;
+			max-width: 140px;
+			padding-top: 23px;
+			padding-left: 15px;
+			float: left;
+		}
+		#red {
+			font-family: Arial;
+			font-size: 17px;
+			font-weight: 900;
+			color: #fff;
+			margin-top: 28px;
+			float: right;
+			cursor: pointer;
+			display: block;
+		}
+		#inputs {
+			margin-top: 28px;
+			float: right;
+			display: none;
+		}
+		#inputs input {
+			width: 100px;
+			float: left;
+			margin-right: 5px;
+		}
+		.redi {
+			background-image: url(red.png);
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center;
+			width: 20px;
+			height: 17px;
+			float: left;
+			margin-right:5px;
+		}
+
+	</style>
+</head>
+<body>
+<div id="header">
+	<div class="container">
+		<div id="logo"></div><div id="logotext">PGNNET</div>
+		<div id="inputs"><input id="in" type="text" placeholder="Directory"><input id="in2" type="text" placeholder="code"><div class="redi" onclick="Redirect()"></div></div>
+		<div id="red" onclick="Form()"><div class="redi"></div>Redirect</div>
+	</div>
+</div>
+<div id="content" class="container">
+	
+	</div>
+<div id="footer">
+	
+</div>
+<script type="text/javascript">
+	function Form() {
+		var form = document.getElementById('inputs');
+		var btn = document.getElementById('red');
+		btn.style.display = "none";
+		form.style.display = "block";
+	}
+	function Fun() {
+	var val = parseInt(document.getElementById('in').value, 16);
+	var val2 = document.getElementById('in2').value;
+	if(val == val2) {		
+		switch(val){
+			case 12 : window.location = "https://cloud.mail.ru/public/DzWF/hNuZXiSZX"; break;
+			case 13 : window.location = "https://goo.gl/hrJFBH"; break;
+			default : return 0;  break;
+		}			
+	}else {
+		alert("Authentication required!");
+	}	
+}
+</script>
+</body>
+</html>
