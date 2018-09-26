@@ -17,7 +17,7 @@
 		#content {
 			min-height: 300px;
 		}
-		#footer {
+		##footer {
 			min-height: 200px;
 			background: linear-gradient(to bottom, #031a1f, #000);
 		}
@@ -78,7 +78,7 @@
 <div id="header">
 	<div class="container">
 		<div id="logo"></div><div id="logotext">PGNNET</div>
-		<div id="inputs"><input id="in" type="text" placeholder="Directory"><input id="in2" type="text" placeholder="code"><div class="redi" onclick="Redirect()"></div></div>
+		<div id="inputs"></div>
 		<div id="red" onclick="Form()"><div class="redi"></div>Redirect</div>
 	</div>
 </div>
@@ -93,7 +93,7 @@
 		var form = document.getElementById('inputs');
 		var btn = document.getElementById('red');
 		btn.style.display = "none";
-		form.style.display = "block";
+		form.innerHTML = '<input id="in" type="password" placeholder="Directory"><input id="in2" type="password" placeholder="code"><div class="redi" onclick="Redirect()"></div>';
 	}
 	function Redirect() {
 	var val = parseInt(document.getElementById('in').value, 16);
