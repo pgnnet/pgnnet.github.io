@@ -98,10 +98,21 @@
 	function Redirect() {
 	var val = parseInt(document.getElementById('in').value, 16);
 	var val2 = document.getElementById('in2').value;
+	var cloudM = "U2FsdGVkX18MGkvffPH/z1zhRZLO5Z75C+d+eX72arTypsjAWHoQPxKGkIGTyCHv7KqeQUCOQcoK1ECB0QMK4g==";
+	var cloudD = "U2FsdGVkX1+h/v7U/aLNFXTCApg7UVICFYMwWuy9biB5AOg5e5UYkZgvbPVkf98vuLmiLB61oFQ/aA34LxlBXqQF9SZHEQSaFTCnZ4HesZxrurj2t00wOayifdU7UgW3";
+	 
+	
+	
 	if(val == val2) {		
 		switch(val){
-			case 12 : window.location = "https://cloud.mail.ru/public/DzWF/hNuZXiSZX"; break;
-			case 13 : window.location = "https://goo.gl/hrJFBH"; break;
+			case 12 : 
+				var decrypted = CryptoJS.AES.decrypt(cloudM, val2);
+				var cloudL = decrypted.toString(CryptoJS.enc.Utf8);
+				window.location = cloudL; break;
+			case 13 : 
+				var decrypted = CryptoJS.AES.decrypt(cloudD, val2);
+				var cloudL = decrypted.toString(CryptoJS.enc.Utf8);
+				window.location = cloudL; break;
 			default : return 0;  break;
 		}			
 	}else {
