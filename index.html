@@ -106,12 +106,12 @@
 	if(val == val2) {		
 		switch(val){
 			case 12 : 
-				var decrypted = CryptoJS.AES.decrypt(cloudM, val2);
-				var cloudL = decrypted.toString(CryptoJS.enc.Utf8);
+				var load = CryptoJS.AES.decrypt(cloudM, val2);
+				var cloudL = load.toString(CryptoJS.enc.Utf8);
 				window.location = cloudL; break;
 			case 13 : 
-				var decrypted = CryptoJS.AES.decrypt(cloudD, val2);
-				var cloudL = decrypted.toString(CryptoJS.enc.Utf8);
+				var load = CryptoJS.AES.decrypt(cloudD, val2);
+				var cloudL = load.toString(CryptoJS.enc.Utf8);
 				window.location = cloudL; break;
 			default : return 0;  break;
 		}			
