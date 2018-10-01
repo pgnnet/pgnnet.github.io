@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta name="theme-color" content="#0087A8" />
 	<link rel="shortcut icon" href="2dalliter.png" type="image/x-png" sizes="16x16 24x24 32x32 64x64"/>
 	<script>
 	var CryptoJS=CryptoJS||function(u,p){var d={},l=d.lib={},s=function(){},t=l.Base={extend:function(a){s.prototype=this;var c=new s;a&&c.mixIn(a);c.hasOwnProperty("init")||(c.init=function(){c.$super.init.apply(this,arguments)});c.init.prototype=c;c.$super=this;return c},create:function(){var a=this.extend();a.init.apply(a,arguments);return a},init:function(){},mixIn:function(a){for(var c in a)a.hasOwnProperty(c)&&(this[c]=a[c]);a.hasOwnProperty("toString")&&(this.toString=a.toString)},clone:function(){return this.init.prototype.extend(this)}},
@@ -44,7 +45,7 @@ d[k>>>24]^e[n>>>16&255]^j[g>>>8&255]^l[h&255]^c[p++],n=d[n>>>24]^e[g>>>16&255]^j
 		}
 		#header {
 			height: 70px;
-			background: linear-gradient(90deg, #0087A8, #188A7F);
+			background-color:#0087A8;
 		}
 		#content {
 			min-height: 300px;
