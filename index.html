@@ -1,17 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta name="viewport" content="width=device-width" />
 	<meta name="theme-color" content="#0087A8" />
-	<meta content="text/html; charset=UTF-8" http-equiv="content-type" />
-	<meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport" />
-	<meta content="Pgnnet gigeon net connection servise" name="description" />
-	<meta content="https://pgnnet.github.io" property="og:url" />
-	<meta content="Pgnnet" property="og:site_name" />
-	<meta content="website" property="og:type" />
-	<meta content="Pgnnet" property="og:description" />
-	<meta content="Pgnnet" property="og:title" />
-	<meta content="#ffffff" name="msapplication-TileColor" />
-
 	<link rel="shortcut icon" href="2dallitter.png" type="image/x-png" sizes="16x16 24x24 32x32 64x64"/>
 	<link href="https://fonts.googleapis.com/css?family=Kanit:800" rel="stylesheet"> 
 	<link href="https://fonts.googleapis.com/css?family=Asap:300" rel="stylesheet"> 
@@ -129,17 +120,30 @@
 			-webkit-justify-content: space-between;
 			-o-justify-content: space-between;
 			justify-content: space-between;
+                        background-color: ;
 		}
 		
-		.redi {			
+		#redi {			
 			width: 35px;
 			height: 20px;
 			margin:5px;
+			display: block;
 			background-image: url(cloud.png);
 			background-position: center;
 			background-repeat: no-repeat;
 			background-size: cover;
 		}
+		#redix {			
+			width: 35px;
+			height: 20px;
+			margin:5px;
+			display: none;
+			background-image: url(cloudx.png);
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+
 		/*     Content start      */
 		h1, h2 {
 			font-family: 'Asap', sans-serif;			
@@ -176,6 +180,7 @@
 			background-color: ;
 			padding: 5px;
 			border-radius: 10px;
+                        display: none;
 		}
 		#inputs {
 			display: flex;
@@ -207,36 +212,43 @@
 			float: left;
 			border-radius: 3px; 			
 		}
-
+                button {
+                        cursor: pointer;
+                }
 	</style>
 </head>
 <body>
-
 <div id="header">
 	<div id="header_left">
 		<div id="logo"></div><div id="logotext">PGNNET</div>		
 	</div>
 	<div id="header_right">
-		<div id="red" onclick="Form()"><div class="redi"></div></div>			
+		<div id="red" onclick="Form()"><div id="redi"></div><div id="redix"></div></div>			
 	</div>
 </div>
-
-
 <div id="content">
-	<div id="cont_left"><h2>Loading content...</h2><p>Content : <code>Empty();</code>.</p></div>
-
+	<div id="cont_left"><h2 class="h2">Empty</h2><p>Content from <code>Empty();</code> function.</p></div>
 	<div id="cont_right">
 		<div id="info"></div>
 	</div>
 </div>
-
-
 <script type="text/javascript">
-	function Form() {
+        function Form() {
 		var form = document.getElementById('info');
-		var btn = document.getElementById('red');
-		form.innerHTML = '<div id = "inputs"><div id="fields"><input id="in" type="password" placeholder="Directory"><input id="in2" type="password" placeholder="Port"></div><button class="redib" onclick="Redirect()">Redirect</button></div>';
-	}
+                var c = document.getElementById('redi');
+                var x = document.getElementById('redix');       
+                if (form.style.display == 'block'){
+                        form.style.display = 'none'; 
+                        c.style.display = 'block'; 
+                        x.style.display = 'none'; 
+                        form.innerHTML = '';
+                }else{
+                        form.style.display = 'block'; 
+                        c.style.display = 'none'; 
+                        x.style.display = 'block'; 
+        		form.innerHTML = '<div id = "inputs"><div id="fields"><input id="in" type="password" placeholder="Directory"><input id="in2" type="password" placeholder="Port"></div><button class="redib" onclick="Redirect()">Redirect</button></div>';
+                }
+        }
 	function Redirect() {
 	var val = parseInt(document.getElementById('in').value, 16);
 	var val2 = document.getElementById('in2').value;
@@ -261,4 +273,3 @@
 </script>
 </body>
 </html>
-
