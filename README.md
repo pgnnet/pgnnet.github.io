@@ -1,5 +1,5 @@
 # Open GTKW
-Home page [PGNNET](https://pgnnet.githu.io)
+Home page [PGNNET](https://pgnnet.github.io)
 
 ## usage
 
