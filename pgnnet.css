@@ -396,6 +396,9 @@
 			#name {
 				text-align: center;
 			}
+			#inputs {
+				width: 100%;
+			}
 			.social_icons {
 				float: right;
 				margin: 0;
