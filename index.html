@@ -87,19 +87,17 @@
 		<div class="normal_font fs20">Personal Folders</div>
 		<div id = "inputs">
 			<div class="coller" style="height: 100px; margin-right: 20px;">
-				<input class="inned" id="in" type="password" placeholder="Directory">
-				<input class="inned" id="in2" type="password" placeholder="Port">
+				<input class="inned" id="cloud" type="text" placeholder="Name">
+				<input class="inned" id="password" type="password" placeholder="Type">
 			</div>
 			<div class="rower" style="height: 100px;">
 				<button class="outed" onclick="Redirect()">Redirect</button>				
 			</div>
-		</div>
+		</div>		
 	</div>
 </div>
 <script type="text/javascript">
 	
-		var input1 = '<div id="form"><div id = "inputs"><input id="in" type="password" placeholder="Directory"><input id="in2" type="password" placeholder="Port"><button class="redib" onclick="Redirect()">Redirect</button></div></div>';
-
 	function Mmenu() {
 		var menu_content = document.getElementById('mmenu');
 		var menu_btn_back = document.getElementById('mob_menu');
@@ -114,26 +112,34 @@
 		}
 	}
 	function Redirect() {
-	var val = parseInt(document.getElementById('in').value, 16);
-	var val2 = document.getElementById('in2').value;
-	var cloudM = "U2FsdGVkX18MGkvffPH/z1zhRZLO5Z75C+d+eX72arTypsjAWHoQPxKGkIGTyCHv7KqeQUCOQcoK1ECB0QMK4g==";
-	var cloudD = "U2FsdGVkX1+h/v7U/aLNFXTCApg7UVICFYMwWuy9biB5AOg5e5UYkZgvbPVkf98vuLmiLB61oFQ/aA34LxlBXqQF9SZHEQSaFTCnZ4HesZxrurj2t00wOayifdU7UgW3";
-		if(val == val2) {		
-			switch(val){
-				case 12 : 
-					var load = CryptoJS.AES.decrypt(cloudM, val2);
+		var a = _$('cloud').value;
+		var b = _$('password').value;
+
+		var init_ca = 'd45d8e4410cb10ffb1083a6124628c9f9774b6139b0a8e7eb1bf8a871978bdb0';
+		var init_cb = '22b2f5f52e7d8e27ea7ded8e6dc64f0cd65b0fcb1bfb2f4438c08c5f83b16658';
+
+		var cloud_d = "U2FsdGVkX19Ro50qlrQxHI6itTpnB27lxJa4LM7Mw8ITrYKLYTx1wFKA7uJNQrlXDU0qcrjdiq57+aB8sXZV1ZNTPZ1H1K0Xuma5w/kye9ImhQBffv6a07U0gzakwWRx";
+		var cloud_m = "U2FsdGVkX194hM6L57X1NkfQiyh4E2jkkm3atX27x6C5nG5pPGc2Ts5vrQ6R8VezpdPWcpX1RaDa+JhpyV9X2g==";
+
+		var c = sha256.hmac(b, a);
+		var d = sha256(b);
+
+		if(c == init_ca || c == init_cb){
+			switch(d) {
+				case '00d8d3f11739d2f3537099982b4674c29fc59a8fda350fca1379613adbb09119' : 
+					var load = CryptoJS.AES.decrypt(cloud_m, d);
 					var cloudL = load.toString(CryptoJS.enc.Utf8);
 					window.location = cloudL; break;
-				case 13 : 
-					var load = CryptoJS.AES.decrypt(cloudD, val2);
+				case 'd90ee9ccf6bea1d2942a7b21319338198dec2a746f8a0d0771621f00da2e0864' : 
+					var load = CryptoJS.AES.decrypt(cloud_d, d);
 					var cloudL = load.toString(CryptoJS.enc.Utf8);
 					window.location = cloudL; break;
-				default : return 0;  break;
+				default : d = "fault"; break;
 			}			
 		}else {
-			alert("Authentication required!");
-		}	
-	}
+			alert("Authentication error!");
+		}
+	}	
 </script>
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script>
