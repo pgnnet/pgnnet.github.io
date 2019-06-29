@@ -118,8 +118,8 @@
 		var init_ca = 'd45d8e4410cb10ffb1083a6124628c9f9774b6139b0a8e7eb1bf8a871978bdb0';
 		var init_cb = '22b2f5f52e7d8e27ea7ded8e6dc64f0cd65b0fcb1bfb2f4438c08c5f83b16658';
 
-		var cloud_d = "U2FsdGVkX19Ro50qlrQxHI6itTpnB27lxJa4LM7Mw8ITrYKLYTx1wFKA7uJNQrlXDU0qcrjdiq57+aB8sXZV1ZNTPZ1H1K0Xuma5w/kye9ImhQBffv6a07U0gzakwWRx";
-		var cloud_m = "U2FsdGVkX194hM6L57X1NkfQiyh4E2jkkm3atX27x6C5nG5pPGc2Ts5vrQ6R8VezpdPWcpX1RaDa+JhpyV9X2g==";
+		var cloud_d = "U2FsdGVkX19RFrCdp1I3JPp4gyZZZailMe8IwuHDJQOUHVQESMMY64hZhe5Ozfz3NkoOll9dPdFYfQYpgsisk3HBythYzlCri21Bd4VmjUiPfmpriIct63Lm8ezno9jl";
+		var cloud_m = "U2FsdGVkX1+UKlmB9coAeEfFD+zi3aYZthPdsSzzxfTdAZkY3HkF5heO64nk1fxIDrnHamdGaomCe8fK2r4xWg==";
 
 		var c = sha256.hmac(b, a);
 		var d = sha256(b);
@@ -127,11 +127,11 @@
 		if(c == init_ca || c == init_cb){
 			switch(d) {
 				case '00d8d3f11739d2f3537099982b4674c29fc59a8fda350fca1379613adbb09119' : 
-					var load = CryptoJS.AES.decrypt(cloud_m, d);
+					var load = CryptoJS.AES.decrypt(cloud_m, b);
 					var cloudL = load.toString(CryptoJS.enc.Utf8);
 					window.location = cloudL; break;
 				case 'd90ee9ccf6bea1d2942a7b21319338198dec2a746f8a0d0771621f00da2e0864' : 
-					var load = CryptoJS.AES.decrypt(cloud_d, d);
+					var load = CryptoJS.AES.decrypt(cloud_d, b);
 					var cloudL = load.toString(CryptoJS.enc.Utf8);
 					window.location = cloudL; break;
 				default : d = "fault"; break;
