@@ -1,20 +1,3 @@
-window.onload = function() {
-	var today = new Date();
-	var age = document.getElementById('age');
-	var edu = document.getElementById('edu');
-	var yyyy = today.getFullYear() - 1995;
-	age.innerHTML = yyyy;
-	var start = 2016;
-	var end = 2020;	
-	if (today.getFullYear() < 2020) {
-		edu.insertAdjacentHTML('beforeend', "("+start+" ~ now)");
-	}else {
-		edu.insertAdjacentHTML('beforeend', "("+start+" ~ "+end+")");
-	}
-}
-function _$(e) {
-	return document.getElementById(e);
-}
 /**
  * [js-sha256]{@link https://github.com/emn178/js-sha256}
  *
