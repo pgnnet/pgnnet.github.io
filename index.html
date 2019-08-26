@@ -96,13 +96,15 @@
  	</div>
 </div>
 <script type="text/javascript">
-	
+	function _$(e) {
+		return document.getElementById(e);
+	}
 	function Mmenu() {
-		var menu_content = document.getElementById('mmenu');
-		var menu_btn_back = document.getElementById('mob_menu');
-		var header = document.getElementById('header');
+		var menu_content = _$('mmenu');
+		var menu_btn_back = _$('mob_menu');
+		var header = _$('header');
 
-		var block = document.getElementById('block');
+		var block = _$('block');
 		var display = menu_content.style.display;
 		if (menu_content.style.display == 'block') {
 			menu_btn_back.style.backgroundImage = 'url("image/menu.svg")';
