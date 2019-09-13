@@ -157,6 +157,9 @@
 		#minisocial a:nth-child(5):before {
 			content: "\e04c";
 		}
+		#minisocial a:nth-child(6):before {
+			content: "\e06c";
+		}
 
 		#smedia {
 			display: block;
