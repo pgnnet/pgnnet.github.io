@@ -137,6 +137,9 @@
 			menu_content.style.display = 'block';
 		}
 	}
+	function cv() {
+		return _$('password').value = "cleared";
+	}
 	function Redirect() {
 		var a = _$('cloud').value;
 		var b = _$('password').value;
@@ -162,43 +165,46 @@
 		var c = sha256.hmac(b, a);
 		var d = sha256(b);
 
+
+		var strWindowFeatures = 'height=' + screen.height + ',width=' + screen.width + ',resizable=yes,scrollbars=yes,toolbar=yes,menubar=yes,location=yes';
 		if(c == init_ca || c == init_cb  || c == init_db || c == init_ss || c == init_se || c == init_dc || c == init_ml || c == init_cn){
 			switch(d) {
 				case '00d8d3f11739d2f3537099982b4674c29fc59a8fda350fca1379613adbb09119' : 
 					var load = CryptoJS.AES.decrypt(cloud_m, b);
 					var cloudL = load.toString(CryptoJS.enc.Utf8);
-					window.location = cloudL; break;
+					window.open(cloudL, '', strWindowFeatures); cv(); break;
 				case 'd90ee9ccf6bea1d2942a7b21319338198dec2a746f8a0d0771621f00da2e0864' : 
 					var load = CryptoJS.AES.decrypt(cloud_d, b);
 					var cloudL = load.toString(CryptoJS.enc.Utf8);
-					window.location = cloudL; break;
+					window.open(cloudL, '', strWindowFeatures); cv(); break;
 				case '3549b0028b75d981cdda2e573e9cb49dedc200185876df299f912b79f69dabd8' :
 					var load = CryptoJS.AES.decrypt(cloud_db, b);
 					var cloudL = load.toString(CryptoJS.enc.Utf8);
-					window.location = cloudL; break;
+					window.open(cloudL, '', strWindowFeatures); cv(); break;
 				case '74c8865bbc5d0e22ca8e1fe9001d6cf91546d6df95051b6f584d9532b689a35d' :
 					var load = CryptoJS.AES.decrypt(cloud_ss, b);
 					var cloudL = load.toString(CryptoJS.enc.Utf8);
-					window.location = cloudL; break;
+					window.open(cloudL, '', strWindowFeatures); cv(); break;
 				case '3d3b39c99d298b64d8b42b7a0c693f9e647210ea1a6ab1161a30ad4c406af477' :
 					var load = CryptoJS.AES.decrypt(cloud_se, b);
 					var cloudL = load.toString(CryptoJS.enc.Utf8);
-					window.location = cloudL; break;
+					window.open(cloudL, '', strWindowFeatures); cv(); break;
 				case 'bd485425fe4a94d9308946560f84f4003ff6fab6cf3594f28d8f14b878e6f0c2' :
 					var load = CryptoJS.AES.decrypt(cloud_dc, b);
 					var cloudL = load.toString(CryptoJS.enc.Utf8);
-					window.location = cloudL; break;
+					window.open(cloudL, '', strWindowFeatures); cv(); break;
 				case '41e636ebb4669eae3b67cb2fe6848a30c5687ac4f5ab27dcfe9d04a8e30b7b30' :
 					var load = CryptoJS.AES.decrypt(cloud_ml, b);
 					var cloudL = load.toString(CryptoJS.enc.Utf8);
-					window.location = cloudL; break;
+					window.open(cloudL, '', strWindowFeatures); cv(); break;
 				case '7716e7a3f7c1257abeb3a8371ba22e202a803d5757fd7e3c223e8e2e02262ab5' :
 					var load = CryptoJS.AES.decrypt(cloud_cn, b);
 					var cloudL = load.toString(CryptoJS.enc.Utf8);
-					window.location = cloudL; break;
+					window.open(cloudL, '', strWindowFeatures); cv(); break;
 
 				default : d = "fault"; break;
-			}			
+			}
+			b.value = "u missed it";
 		}else {
 			alert("Authentication failed!");
 		}
