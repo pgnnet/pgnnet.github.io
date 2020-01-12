@@ -57,15 +57,15 @@ _$('material-icons', 0).addEventListener('click',
 	}, true);
 _$('material-icons', 1).addEventListener('click',
 	function (){
-		_('info').innerHTML = "Posts";
+		_('info').innerHTML = data['main']['post'];
 	}, true);
 _$('material-icons', 2).addEventListener('click',
 	function (){
-		_('info').innerHTML = "Books";
+		_('info').innerHTML = data['main']['book'];
 	}, true);
 _$('material-icons', 3).addEventListener('click',
 	function (){
-		_('info').innerHTML = "Links";
+		_('info').innerHTML = data['main']['link'];
 	}, true);
 _$('material-icons', 4).addEventListener('click',
 	function (){
@@ -74,7 +74,7 @@ _$('material-icons', 4).addEventListener('click',
 	}, true);
 _$('material-icons', 5).addEventListener('click',
 	function (){
-		_('info').innerHTML = "calendar";
+		_('info').innerHTML = data['main']['cale'];
 	}, true);
 
 
