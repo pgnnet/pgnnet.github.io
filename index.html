@@ -37,7 +37,7 @@
 			}
 		})();
 	</script>
-	<title>PGNNET | <?php echo date('Y'); ?></title>
+	<title>PGNNET | </title>
 </head>
 <body>
 <div class="navigation">
@@ -110,5 +110,11 @@
 </div>
 <script src="pgnnet.js"></script>
 <script src="mini.js"></script>
+<script type="text/javascript">
+	(function () {
+		var y = new Date('January 01 20 00:00:00');
+		document.getElementsByTagName('title')[0].insertAdjacentHTML('beforeend', y.getFullYear()); 
+	})();
+</script>
 </body>
 </html>
