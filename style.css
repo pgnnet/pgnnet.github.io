@@ -387,6 +387,7 @@ div.foot {
 	margin: 5px 0px 5px 0px;
 	width: 80%;	
 	font-size: 1em;
+	outline: none
 }
 #popup .btl {
 	border-bottom: 1px solid #999;
