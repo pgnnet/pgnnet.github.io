@@ -38,8 +38,11 @@ body{
 	background-color: #fff;
 	min-width: 300px;
 }
-.container {
+html {
 	font-family: 'open-sans';
+
+}
+.container {
 	width: auto;
 	padding: 30px;
 	display: flex;
@@ -57,6 +60,16 @@ body{
 	flex-direction: row;
 	background-color: grey;	
 }
+.col {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: 10px;
+}
+.small-caps {
+	font-size: smaller;
+	font-family: 'comfortaa';
+}
 #left {
 	width: 6%;
 	height: 100%;
@@ -66,6 +79,7 @@ body{
 #logo {
 	margin-top: 10%;
 	width: 60%;
+	transform: rotate(-90deg);
 }
 #right {
 	background: #ffffff;
@@ -272,9 +286,6 @@ body{
 	max-width: 1000px;
 	text-align: justify;
 }
-svg.logob {
-	display: none;
-}
 .material-icons {
 	font-family: 'Material Icons';
 	font-weight: normal;
@@ -311,14 +322,10 @@ div.navigation a {
 	transition: color 0.3s;
 	color: #fff;
 	cursor: pointer;
+	position: relative;
 }
 div.navigation a.active {
 	color: #000;
-}
-
-div.navigation svg.navigation-icon {
-	width: 43px;
-	height: 43px;
 }
 
 div.navigation a.aside {
@@ -343,10 +350,11 @@ div.claim {
 }
 
 svg.logo {
-	width: 96px;
-	height: 96px;
-	margin-bottom: 8px;
+	width: 53px;
+	height: 43px;
+	transform: rotate(-90deg);
 }
+
 div.foot {
 	border-top: 1px solid #f6f6f6;
 	text-align: center;
@@ -400,7 +408,7 @@ div.foot {
 	right: 15px;
 	cursor: pointer;
 }
-#exit:hover : #popup {
+#exit:hover  #popup {
 	background: red;
 } 
 .blue_button {
@@ -424,15 +432,10 @@ div.foot {
 	width: 80%;
 }
 @media (max-width: 550px) {
-	svg.logoa {
-		display: none;					
-	}
-	svg.logob {
-		display: block;
-	}
 	svg.logo {
-		margin-right: 8px;
+		margin-right: 0px;
 		margin-bottom: 0px;
+		transform: rotate(0deg);
 	}
 	div.navigation {
 	    border-bottom: 1px solid #eee;
